@@ -1,0 +1,95 @@
+@use '../../node_modules/modern-normalize/modern-normalize.css';
+@use 'scss/reset';
+@use 'scss/mixins';
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  --background-1: #202020;
+  --background-2: #303030;
+  --foreground-1: #fafafa;
+  --foreground-2: #cacaca;
+  --blue: #40d5fe;
+
+  background-color: var(--background-1);
+  color: var(--foreground-1);
+  font-family: Inter, sans-serif;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+code {
+  background-color: var(--background-1);
+  font-family: monospace;
+  display: inline-block;
+  padding: 0.25rem;
+}
+
+table {
+  border: 2px solid var(--background-1);
+  border-collapse: collapse;
+
+  td {
+    padding: 1rem;
+
+    &:first-child {
+      font-weight: bold;
+    }
+  }
+
+  tr {
+    &:nth-child(odd) {
+      background-color: var(--background-1);
+    }
+  }
+}
+
+.page-header,
+.page-main {
+  @include mixins.responsive-container;
+
+  background-color: var(--background-2);
+  border: 2px solid var(--blue);
+  border-radius: 1rem;
+}
+
+.page-header {
+  padding: 1rem;
+
+  h1 {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+  }
+
+  img {
+    border-radius: 1rem;
+    height: 5rem;
+  }
+}
+
+.page-main {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 1rem;
+}
+
+.info {
+  padding: 2rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  li {
+    margin-left: 2rem;
+  }
+}

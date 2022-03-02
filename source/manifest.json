@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json.schemastore.org/webextension",
+  "manifest_version": 2,
+  "name": "WebExtension Template",
+  "description": "An opinionated WebExtension template.",
+  "version": "0.1.0",
+  "permissions": [
+    "downloads",
+    "storage",
+    "*://example.org/*"
+  ],
+  "content_security_policy": "script-src 'self'; object-src 'self'; style-src 'unsafe-inline'",
+  "web_accessible_resources": [
+    "assets/**"
+  ],
+  "icons": {
+    "128": "assets/web-ext-template-logo.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "128": "assets/web-ext-template-logo.png"
+    }
+  },
+  "options_ui": {
+    "page": "options/index.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "scripts": [
+      "background-scripts/initialize.ts"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://example.org/*"
+      ],
+      "run_at": "document_end",
+      "css": [
+        "generated:content-scripts/style.css"
+      ],
+      "js": [
+        "content-scripts/initialize.ts"
+      ]
+    }
+  ]
+}
