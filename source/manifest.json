@@ -37,7 +37,7 @@
       ],
       "run_at": "document_end",
       "css": [
-        "generated:content-scripts/style.css"
+        "content-scripts/content-styles.scss"
       ],
       "js": [
         "content-scripts/initialize.ts"
