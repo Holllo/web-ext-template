@@ -1,5 +1,3 @@
-import '@fontsource/inter/latin.css';
-
 import browser from 'webextension-polyfill';
 import {html} from 'htm/preact';
 import {Component, render} from 'preact';
